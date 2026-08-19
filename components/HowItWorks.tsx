@@ -42,10 +42,10 @@ export default function HowItWorks() {
     <section id="how" className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="max-w-2xl">
-          <h2 className="text-balance text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 md:text-4xl">
+          <h2 className="text-balance text-3xl font-semibold tracking-tight text-[var(--foreground)] md:text-4xl">
             From signals to decisions.
           </h2>
-          <p className="mt-3 text-pretty text-zinc-600 dark:text-zinc-300">
+          <p className="mt-3 text-pretty text-[var(--pulse-muted)]">
             A pipeline that stays understandable: clear inputs, clear analysis, and
             clear next steps.
           </p>
@@ -55,17 +55,17 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <div
               key={step.title}
-              className="relative overflow-hidden rounded-3xl border border-zinc-200/70 bg-white/60 p-6 shadow-sm backdrop-blur dark:border-zinc-800/70 dark:bg-black/20"
+              className="relative overflow-hidden rounded-3xl border border-[var(--pulse-border)] bg-[var(--pulse-surface-60)] p-6 shadow-sm backdrop-blur"
             >
               <div className="flex items-center gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-2xl bg-violet-500/10 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300">
+                <div className="grid h-10 w-10 place-items-center rounded-2xl bg-violet-500/10 text-[var(--pulse-violet-text)]">
                   {step.icon}
                 </div>
-                <h3 className="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
+                <h3 className="text-lg font-semibold tracking-tight text-[var(--foreground)]">
                   {step.title}
                 </h3>
               </div>
-              <p className="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-300">
+              <p className="mt-3 text-sm leading-6 text-[var(--pulse-muted)]">
                 {step.desc}
               </p>
               <div

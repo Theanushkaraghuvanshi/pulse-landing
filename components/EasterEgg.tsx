@@ -88,7 +88,7 @@ export default function EasterEgg() {
         className="fixed inset-0 z-[60] pointer-events-none"
       />
       {unlocked ? (
-        <div className="fixed left-1/2 top-5 z-[70] w-[min(92vw,560px)] -translate-x-1/2 rounded-2xl border border-violet-500/30 bg-white/80 px-4 py-3 text-center text-sm font-semibold text-zinc-950 shadow-sm backdrop-blur dark:border-violet-500/20 dark:bg-black/60 dark:text-zinc-50">
+        <div className="fixed left-1/2 top-5 z-[70] w-[min(92vw,560px)] -translate-x-1/2 rounded-2xl border border-violet-500/30 bg-[var(--pulse-surface-80)] px-4 py-3 text-center text-sm font-semibold text-[var(--foreground)] shadow-sm backdrop-blur">
           Secret unlocked. Nice engineering instincts.
         </div>
       ) : null}

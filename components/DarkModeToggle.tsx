@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useState } from "react";
 
 function SunIcon() {
   return (
@@ -32,26 +32,32 @@ function MoonIcon() {
 }
 
 export default function DarkModeToggle() {
-  const toggleTheme = useCallback(() => {
-    const nextTheme: "light" | "dark" =
-      document.documentElement.classList.contains("dark") ? "light" : "dark";
-    document.documentElement.classList.toggle("dark", nextTheme === "dark");
-    localStorage.setItem("pulse_theme", nextTheme);
-  }, []);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof document === "undefined") return false;
+    return document.documentElement.classList.contains("dark");
+  });
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    document.documentElement.classList.toggle("dark", next);
+
+    // Best-effort persistence (don’t break toggling if storage is blocked).
+    try {
+      localStorage.setItem("pulse_theme", next ? "dark" : "light");
+    } catch {
+      // ignore
+    }
+  };
 
   return (
     <button
       type="button"
       onClick={toggleTheme}
       aria-label="Toggle dark mode"
-      className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-zinc-200/70 bg-white/80 text-zinc-900 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-zinc-50"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--pulse-border)] bg-[var(--pulse-surface-80)] text-[var(--foreground)] shadow-sm backdrop-blur"
     >
-      <span className="dark:hidden">
-        <SunIcon />
-      </span>
-      <span className="hidden dark:inline-flex">
-        <MoonIcon />
-      </span>
+      {isDark ? <MoonIcon /> : <SunIcon />}
     </button>
   );
 }

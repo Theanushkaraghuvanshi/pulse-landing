@@ -7,7 +7,7 @@ import ProductShowcase from "../components/ProductShowcase";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-white font-sans text-zinc-950 dark:bg-black dark:text-zinc-50">
+    <div className="flex min-h-screen flex-col bg-[var(--background)] font-sans text-[var(--foreground)]">
       <div id="top" />
       <Navbar />
 
