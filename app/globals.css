@@ -12,15 +12,38 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Konami-code easter egg confetti */
+@keyframes confettiFall {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx, 0px), 110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confettiPiece {
+  position: absolute;
+  top: -10px;
+  left: var(--x, 50%);
+  width: var(--w, 8px);
+  height: var(--h, 12px);
+  border-radius: 2px;
+  background: var(--c, #a855f7);
+  transform: translate(0px, 0px) rotate(0deg);
+  animation: confettiFall var(--dur, 1000ms) linear forwards;
+  pointer-events: none;
 }
