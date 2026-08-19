@@ -92,3 +92,20 @@ body {
   animation: confettiFall var(--dur, 1000ms) linear forwards;
   pointer-events: none;
 }
+
+/* Dark-mode icon swap (prevents hard-refresh mismatches) */
+.pulseIconLight {
+  display: inline-flex;
+}
+
+.pulseIconDark {
+  display: none;
+}
+
+html.dark .pulseIconLight {
+  display: none;
+}
+
+html.dark .pulseIconDark {
+  display: inline-flex;
+}

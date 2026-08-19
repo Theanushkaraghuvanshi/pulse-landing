@@ -24,7 +24,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col overflow-x-hidden">
+      <head>
+        <link rel="icon" href="/pulse-favicon.svg" type="image/svg+xml" />
         <script
           // Runs before React hydrates so the page paints in the right theme.
           suppressHydrationWarning
@@ -32,6 +33,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html: `(()=>{try{const saved=localStorage.getItem('pulse_theme');const prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;const next=saved==='dark'||saved==='light'?saved:(prefersDark?'dark':'light');document.documentElement.classList.toggle('dark', next==='dark');}catch(e){}})();`,
           }}
         />
+      </head>
+      <body className="min-h-full flex flex-col overflow-x-hidden">
         {children}
       </body>
     </html>

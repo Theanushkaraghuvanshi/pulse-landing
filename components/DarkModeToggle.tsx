@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 function SunIcon() {
   return (
     <svg
@@ -32,19 +30,14 @@ function MoonIcon() {
 }
 
 export default function DarkModeToggle() {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof document === "undefined") return false;
-    return document.documentElement.classList.contains("dark");
-  });
-
   const toggleTheme = () => {
-    const next = !isDark;
-    setIsDark(next);
-    document.documentElement.classList.toggle("dark", next);
+    const currentlyDark = document.documentElement.classList.contains("dark");
+    const nextDark = !currentlyDark;
+    document.documentElement.classList.toggle("dark", nextDark);
 
     // Best-effort persistence (don’t break toggling if storage is blocked).
     try {
-      localStorage.setItem("pulse_theme", next ? "dark" : "light");
+      localStorage.setItem("pulse_theme", nextDark ? "dark" : "light");
     } catch {
       // ignore
     }
@@ -57,7 +50,12 @@ export default function DarkModeToggle() {
       aria-label="Toggle dark mode"
       className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--pulse-border)] bg-[var(--pulse-surface-80)] text-[var(--foreground)] shadow-sm backdrop-blur"
     >
-      {isDark ? <MoonIcon /> : <SunIcon />}
+      <span className="pulseIconLight">
+        <SunIcon />
+      </span>
+      <span className="pulseIconDark">
+        <MoonIcon />
+      </span>
     </button>
   );
 }
