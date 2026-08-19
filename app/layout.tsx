@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pulse — Team Engineering Analytics",
+  title: "Pulse Team Engineering Analytics",
   description:
     "Pulse turns engineering work signals into actionable health dashboards for teams.",
 };

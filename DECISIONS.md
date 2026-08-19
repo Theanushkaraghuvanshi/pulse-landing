@@ -1,4 +1,4 @@
-# DECISIONS (Pulse — Frontend Challenge Part 2)
+# DECISIONS (Pulse Frontend Challenge Part 2)
 
 ## 1) Why this approach (instead of the obvious alternatives)
 I chose **Next.js (App Router) + Tailwind + Framer Motion** because it lets me ship a “Product Hunt / wow” landing page quickly *with real implementation detail*:

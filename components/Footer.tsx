@@ -48,7 +48,9 @@ export default function Footer() {
                   className="inline-flex h-11 items-center justify-center rounded-2xl bg-[var(--pulse-cta-bg)] px-5 text-sm font-semibold text-[var(--pulse-cta-fg)] shadow-sm transition hover:bg-[var(--pulse-cta-hover-bg)] focus:outline-none focus:ring-2 focus:ring-violet-500/40"
                   onClick={() => {
                     // This is a landing-page challenge: keep it honest (no fake checkout).
-                    alert("Thanks! This is a UI demo—wire your real signup flow later.");
+                    alert(
+                      "Thanks! This is a UI demo, wire your real signup flow later."
+                    );
                   }}
                 >
                   Try Pulse free for 14 days

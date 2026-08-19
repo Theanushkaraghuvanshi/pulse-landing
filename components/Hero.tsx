@@ -21,7 +21,7 @@ export default function Hero() {
 
             <p className="mt-4 max-w-xl text-pretty text-lg leading-8 text-[var(--pulse-muted)] md:text-xl">
               Pulse turns day-to-day work signals into engineering health dashboards
-              your team can trust—so you can spot friction before it becomes
+              your team can trust, so you can spot friction before it becomes
               a fire drill.
             </p>
 
@@ -115,7 +115,7 @@ export default function Hero() {
               </div>
 
               <p className="mt-3 text-xs text-[var(--pulse-muted-2)]">
-                This card is a UI mock—meant to show craft and interaction.
+                This card is a UI mock, meant to show craft and interaction.
               </p>
             </div>
           </div>

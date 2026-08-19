@@ -14,7 +14,7 @@ export default function HowItWorks() {
     },
     {
       title: "Analyze",
-      desc: "Pulse looks for patterns: review latency, blocker clusters, and focus interruptions—then turns them into clear signals.",
+      desc: "Pulse looks for patterns: review latency, blocker clusters, and focus interruptions, then turns them into clear signals.",
       icon: (
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
           <path
@@ -26,7 +26,7 @@ export default function HowItWorks() {
     },
     {
       title: "Act",
-      desc: "Use the dashboard to pick the next best move. Pulse won’t pretend it’s magic—just actionable next steps.",
+      desc: "Use the dashboard to pick the next best move. Pulse won’t pretend it’s magic, just actionable next steps.",
       icon: (
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
           <path
